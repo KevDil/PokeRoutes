@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import viewcontroller.MasterViewController;
 
+//commit test von Thomas
 
 public class Main extends Application {
 	private static String path = "file:///sopra/sopgr07/sopr071/workspace/Sandcastle/resources";
