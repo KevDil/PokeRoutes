@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewcontroller.MenuController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" styleClass="body" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onActionNewGame" prefWidth="220.0" text="Spiel starten">
+               <VBox.margin>
+                  <Insets top="140.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#onActionHighscore" prefWidth="220.0" text="Highscore">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#onActionInstructions" prefWidth="220.0" text="Produktbeschreibung">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#onActionAbout" prefWidth="220.0" text="Über PokéRoutes" />
+            <Button mnemonicParsing="false" onAction="#onActionEndGame" prefWidth="220.0" text="Spiel beenden">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+   <top>
+      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" spacing="10.0" style="-fx-background-color: #9ed7f6;" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Label text="PokéRoutes">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

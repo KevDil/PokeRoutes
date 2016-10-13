@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewcontroller.DeckController">
+   <top>
+      <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Deck">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Separator />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <ScrollPane style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane style="-fx-background-color: transparent;">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="630.0" prefWidth="330.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <ImageView fx:id="imgViewDeck" fitHeight="128.0" fitWidth="128.0" onMouseClicked="#onDeckClick" pickOnBounds="true" preserveRatio="true" styleClass="deckImages" />
+                              <ImageView fx:id="imgViewBigWave" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true" styleClass="deckImages" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <Label text="Offene Karten">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Separator />
+                        <HBox alignment="TOP_CENTER" prefHeight="250.0" prefWidth="384.0" spacing="5.0">
+                           <VBox.margin>
+                              <Insets bottom="25.0" top="10.0" />
+                           </VBox.margin>
+                           <children>
+                              <Pane fx:id="openCard1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#openCardClick" prefHeight="128.0" prefWidth="128.0" styleClass="deckImages" />
+                              <Pane fx:id="openCard2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#openCardClick" prefHeight="128.0" prefWidth="128.0" styleClass="deckImages" />
+                              <Pane fx:id="openCard3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#openCardClick" prefHeight="128.0" prefWidth="128.0" styleClass="deckImages" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <Label text="Bonuskarten">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Separator />
+                        <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0">
+                           <children>
+                              <HBox fx:id="hboxFormBonus" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" styleClass="deckImages">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox fx:id="hboxCountBonus" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" styleClass="deckImages">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="25.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <VBox alignment="TOP_CENTER" prefHeight="317.0" prefWidth="333.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Übersicht">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <TableView fx:id="tvPlayer">
+              <columns>
+                <TableColumn fx:id="tcPlayerOrder" prefWidth="95.0" text="Reihenfolge" />
+                <TableColumn fx:id="tcPlayerName" prefWidth="121.0" text="Spieler" />
+                  <TableColumn fx:id="tcPlayerPoints" prefWidth="83.0" text="Punktzahl" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

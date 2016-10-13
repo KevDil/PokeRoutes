@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewcontroller.HighscoreController">
+   <center>
+      <TableView fx:id="tvHighscore" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="tcPosition" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="100.0" text="Platz" />
+          <TableColumn fx:id="tcPlayer" maxWidth="1.7976931348623157E308" minWidth="200.0" prefWidth="200.0" text="Spieler" />
+            <TableColumn fx:id="tcScore" maxWidth="1.7976931348623157E308" minWidth="125.0" prefWidth="125.0" text="Score" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#resetOnAction" text="Zurücksetzen" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onActionMenu" text="Zurück zum Menü" GridPane.halignment="LEFT" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </bottom>
+</BorderPane>

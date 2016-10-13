@@ -1,0 +1,203 @@
+public class teeeeest {
+
+	private static int[][] rotate(int castle[][]) {
+		int l = castle.length;
+		int rotatedCastle[][] = new int[l][l];
+
+		for (int i = 0; i < l; i++) {
+			int k = l;
+			for (int j = 0; j < l; j++, k--) {
+				rotatedCastle[i][j] = castle[k - 1][i];
+			}
+
+		}
+
+		return rotatedCastle;
+	}
+	
+	private static int[][] squareMatrix(int a[][]) {
+		int w = a.length,
+				h = a[0].length;
+		
+		if(h == w)
+			return a;
+		
+		if(h > w) {
+			int result[][] = new int[h][h];
+			int diff = h - w;
+			
+			int leftFill = (diff / 2) + (diff%2);
+			
+			for(int i = 0; i < w; i++)
+					for(int j = 0; j < h; j++) 
+						result[i+leftFill][j] = a[i][j];
+			
+			return result;
+			
+		} else  { //w > h
+			int result[][] = new int[w][w];
+			int diff = w - h;
+			
+			int topFill = (diff / 2) + (diff%2);
+			
+			for(int i = 0; i < w; i++)
+					for(int j = 0; j < h; j++) 
+						result[i][j+topFill] = a[i][j];
+			
+			return result;
+		}
+	}
+
+	private static boolean compareMatrix(int a[][], int b[][]) {
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a.length; j++) {
+				if (a[i][j] != b[i][j])
+					return false;
+			}
+		}
+		return true;
+	}
+
+	private static boolean compareRotateMatrix(int a[][], int b[][]) {
+		if (compareMatrix(a, b))
+			return true;
+		a = rotate(a);
+		if (compareMatrix(a, b))
+			return true;
+		a = rotate(a);
+		if (compareMatrix(a, b))
+			return true;
+		a = rotate(a);
+		if (compareMatrix(a, b))
+			return true;
+		return false;
+	}
+
+	public static String patternCheck(int castle[][]) {
+		int bergfried[][] = new int[][] { 
+			{ 1, 1 },
+			{ 1, 1 } };
+
+		int axt[][] = new int[][] { 
+			{ 0, 0, 0, 0 },
+			{ 1, 1, 1, 1 },
+			{ 0, 0, 0, 1 },
+			{ 0, 0, 0, 0 } };
+
+		int wurm[][] = new int[][] { 
+			{ 1, 0, 0 },
+			{ 1, 1, 1 },
+			{ 0, 0, 1 } };
+
+		int baracken[][] = new int[][] { 
+			{ 0, 0, 0 },
+			{ 1, 1, 1 },
+			{ 1, 1, 1 } };
+
+		int treppe[][] = new int[][] { 
+			{ 0, 0, 0, 0 },
+			{ 0, 0, 1, 1 },
+			{ 0, 1, 1, 0 },
+			{ 1, 1, 0, 0 } };
+
+		int pfau[][] = new int[][] {
+			{ 0, 0, 0, 0 },
+			{ 0, 0, 0, 1 },
+			{ 1, 1, 1, 1 },
+			{ 0, 0, 1, 0 } };
+
+		int kaktus[][] = new int[][] { 
+			{ 1, 0, 1 },
+			{ 1, 1, 1 },
+			{ 0, 1, 0 } };
+
+		int kloster[][] = new int[][] { 
+			{ 0, 0, 0, 0 },
+			{ 0, 0, 1, 0 },
+			{ 1, 1, 1, 1 },
+			{ 0, 0, 1, 0 } };
+
+		int goldfisch[][] = new int[][] { 
+			{ 0, 1, 1 },
+			{ 1, 1, 1 },
+			{ 0, 1, 0 } };
+
+		switch (castle.length) {
+		case 2:
+			if (compareRotateMatrix(bergfried, castle))
+				return "Bergfried";
+			break;
+		case 3:
+			if (compareRotateMatrix(wurm, castle))
+				return "Wurm";
+			if (compareRotateMatrix(baracken, castle))
+				return "baracken";
+			if (compareRotateMatrix(kaktus, castle))
+				return "kaktus";
+			if (compareRotateMatrix(goldfisch, castle))
+				return "goldfisch";
+			break;
+		case 4:
+			if (compareRotateMatrix(axt, castle))
+				return "Axt";
+			if (compareRotateMatrix(treppe, castle))
+				return "Treppe";
+			if (compareRotateMatrix(pfau, castle))
+				return "Pfau";
+			if (compareRotateMatrix(kloster, castle))
+				return "Kloster";
+			break;
+		default:
+			break;
+		}
+		return "nichts";
+	}
+
+	private static void printMatrix(int[][] m) {
+		for (int y = 0; y < m.length; y++) {
+			for (int z = 0; z < m.length; z++) {
+				System.out.print(m[y][z]);
+			}
+			System.out.println("");
+		}
+		
+		System.out.println("------------");
+	}
+
+	public static void main(String[] args) {
+		int axt[][] = new int[][] { { 0, 1, 1, 0 },
+									{ 0, 1, 0, 0 },
+									{ 0, 1, 0, 0 },
+									{ 0, 1, 0, 0 } };
+									
+									int treppe[][] = new int[][] { 
+										{ 0, 0, 1, 1 },
+										{ 0, 1, 1, 0 },
+										{ 1, 1, 0, 0 } };
+									
+									int axt2[][] = new int[][] { 
+										{  1, 1, 0 },
+										{  1, 0, 0 },
+										{  1, 0, 0 },
+										{  1, 0, 0 } };
+										
+									
+		System.out.println(patternCheck(rotate(squareMatrix(treppe))));
+		
+		printMatrix(squareMatrix(treppe));
+									
+		/*int a[][] = rotate(axt);
+		printMatrix(a);
+		
+		a = rotate(a);
+		printMatrix(a);
+		
+		a = rotate(a);
+		printMatrix(a);
+		
+		a = rotate(a);
+		printMatrix(a);*/
+
+	}
+
+}

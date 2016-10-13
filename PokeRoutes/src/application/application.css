@@ -1,0 +1,90 @@
+#managePlayer {
+	-fx-background-color: #679F5F;
+}
+
+.managePlayerButtons {
+    -fx-border-color: #193c14;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-background-color: #3a6c33;
+    -fx-font-size: 11pt;
+    -fx-text-fill: white;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.managePlayerButtons:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+.managePlayerButtons:pressed, .managePlayerButtons:default:hover:pressed {
+  -fx-background-color: #193c14;
+  -fx-text-fill: white;
+}
+
+.managePlayerButtons:focused {
+    -fx-border-color: white;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.managePlayerButtons:disabled, .managePlayerButtons:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.managePlayerButtons:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #ffffff;
+}
+
+.managePlayerButtons:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+
+.managePlayerImages {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	-fx-padding: 10;
+}
+
+.managePlayerTextfields {
+	-fx-background-color: #3a6c33;
+	-fx-border-color: black;
+	-fx-border-width: 1;
+	-fx-text-fill: white;
+}
+
+.managePlayerRadiobuttons .dot {
+	-fx-mark-highlight-color: #3a6c33;
+  	-fx-mark-color: #3a6c33;
+}
+
+.managePlayerRadiobuttons .radio {
+	-fx-background-color : white;
+}
+
+.managePlayerCombobox {
+	-fx-background-color: #3a6c33;
+	-fx-text-fill: white;
+}
+
+.managePlayerCombobox .cell{
+	-fx-text-fill: white;
+}
+
+.deckImages {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	-fx-padding: 10;
+}
+
+.deckImages:hover {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 30, 0, 0, 0);
+	-fx-padding: 10;
+}
+
+.imgNoneEffect {
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	-fx-padding: 10;
+}
