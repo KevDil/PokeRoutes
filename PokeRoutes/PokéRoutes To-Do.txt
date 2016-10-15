@@ -1,0 +1,56 @@
+PokéRoutes To-Do:
+
+Menü
+- Spiel laden hinzufügen
+- Hyperlink im About fixieren
+- QR-Code?
+
+ManagePlayer
+- Fenster fixen
+- Kurzes/Langes Spiel
+- AI einfügen
+- Tutorial zur GUI?
+
+CurrentPlayer
+- Knopf um Zug zu beenden
+- Leiste, was man machen kann (als Lauftext)
+- Burg fertig? Dann benachrichtigen und Punktzahl anzeigen
+- Handkarte Rechtsklick anders lösen
+- Selber bestätigen, dass die Ai fertig ist, bei Spielerwechsel
+- Neue Route anlegen neben Tab
+- Immer! anzeigen was die AI gemacht hat
+- Anordnung ändern
+- Wollen Sie wirklich diese Karte mit der tauschen?
+
+InactivePlayer
+- Aktuelle Burgen anzeigen
+- CurrentPlayer nicht in Queue
+- Anzeigen, wer als nächstes dran ist
+- Gegner angreifen in InactivePlayer - Area
+
+Deck
+- Bonuskarten hovern, wem sie gehört
+- Restliche Karten/Gespielte Karten - Info
+- Deck anklicken -> Karte zeigen, die man gezogen hat
+- Aktuelle Reihenfolge Tabelle ändern
+- Deck hovern -> Zeigen, wie man Karte ziehen kann
+
+Combat
+- Fenster anpassen
+- Buttons und Fenster hinzufügen
+- Sieger und Verlierer anzeigen
+- Statistiken?
+
+Menüleiste
+- Schritt zurück fixen
+- Tipp anzeigen fixen
+- Ausm Highscore-Stand löschen, wenn Tipp anzeigen, oder Schritt zurück
+
+Sonstiges
+- Hintergrund mit .css
+- Schatten fixen
+- Soundeffekte beim Spielen? z.b. Karte ziehen, legen, Combat
+- Isso und Woingenau in die Fenster
+- Dummy-Bilder oder Text (BK, AB, EB, GW)
+- Alle Fenster anpassen
+
