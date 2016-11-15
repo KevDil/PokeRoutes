@@ -54,4 +54,5 @@ Sonstiges
 - Isso und Woingenau in die Fenster
 - Dummy-Bilder oder Text (BK, AB, EB, GW)
 - Alle Fenster anpassen
+- "Log-Box"
 
