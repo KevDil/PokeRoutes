@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="managePlayer" minHeight="-Infinity" minWidth="-Infinity" prefHeight="920.0" prefWidth="1144.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewcontroller.ManagePlayerController">
+<BorderPane id="managePlayer" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewcontroller.ManagePlayerController">
    <bottom>
       <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="63.0" prefWidth="1119.0" BorderPane.alignment="CENTER">
         <columnConstraints>
