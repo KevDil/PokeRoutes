@@ -2,6 +2,8 @@ package viewcontroller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class MenuController extends ViewController {
 
@@ -31,6 +33,18 @@ public class MenuController extends ViewController {
     @FXML
     void onActionNewGame(ActionEvent event) {
     	masterViewController.loadManagePlayer();
+    }
+    
+    @FXML
+    void onActionLoadGame(ActionEvent event) {
+    	try {
+			masterViewController.load();
+			masterViewController.loadMainscreen();
+		} catch (Exception e) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("ERROR!");
+			alert.setContentText("Das Spiel konnte nicht geladen werden!");
+		}
     }
 
 }
