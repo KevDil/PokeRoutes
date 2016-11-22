@@ -172,6 +172,7 @@ public class MasterViewController implements AUIView {
 	public void loadManagePlayer() {
 		stage.setScene(managePlayerView.getScene());
 		stage.centerOnScreen();
+		
 	}
 	
 	public void loadAbout() {

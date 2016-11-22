@@ -5,10 +5,12 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -63,447 +65,476 @@
          </BorderPane.margin>
       </Label>
    </top>
-   <center>
-      <VBox spacing="10.0" BorderPane.alignment="CENTER">
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-         <children>
-            <GridPane fx:id="gridPanePlayer1" prefHeight="105.0" prefWidth="1090.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
+   <right>
+      <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="460.0" prefWidth="1120.0" style="-fx-background-color: transparent;" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane id="managePlayerAnchorPane" prefHeight="200.0" prefWidth="1103.0" stylesheets="@../application/application.css">
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                  <VBox prefHeight="200.0" prefWidth="1103.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                      <children>
-                        <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar1" styleClass="managePlayerButtons" text="&lt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                        <ImageView fx:id="imgAvatar1" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
-                           <image>
-                              <Image url="@../../resources/avatar/1.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </ImageView>
-                        <Button mnemonicParsing="false" onAction="#onActionNextAvatar1" styleClass="managePlayerButtons" text="&gt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
+                        <GridPane fx:id="gridPanePlayer1" minHeight="-Infinity" prefHeight="105.0" prefWidth="1090.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar1" styleClass="managePlayerButtons" text="&lt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <ImageView fx:id="imgAvatar1" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
+                                       <image>
+                                          <Image url="@../../resources/avatar/1.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Button mnemonicParsing="false" onAction="#onActionNextAvatar1" styleClass="managePlayerButtons" text="&gt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label text="Spieler 1 :" GridPane.halignment="LEFT">
+                                 <GridPane.margin>
+                                    <Insets left="80.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txtName1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 1" styleClass="managePlayerTextfields" text="Brettspielzerstörer" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </TextField>
+                              <RadioButton fx:id="choiceHuman1" mnemonicParsing="false" onAction="#humanOnAction1" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="25.0" />
+                                 </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="choiceType" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="choiceAI1" mnemonicParsing="false" onAction="#aiOnAction1" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets top="25.0" />
+                                 </GridPane.margin>
+                              </RadioButton>
+                              <ComboBox fx:id="comboDifficult1" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="gridPanePlayer2" minHeight="-Infinity" prefHeight="105.0" prefWidth="1090.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar2" styleClass="managePlayerButtons" text="&lt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <ImageView id="imgAvatar" fx:id="imgAvatar2" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
+                                       <image>
+                                          <Image url="@../../resources/avatar/2.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Button mnemonicParsing="false" onAction="#onActionNextAvatar2" styleClass="managePlayerButtons" text="&gt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label text="Spieler 2:" GridPane.halignment="LEFT">
+                                 <GridPane.margin>
+                                    <Insets left="80.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txtName2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 2" styleClass="managePlayerTextfields" text="AlanTuring" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </TextField>
+                              <RadioButton fx:id="choiceHuman2" mnemonicParsing="false" onAction="#humanOnAction2" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="25.0" />
+                                 </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="choiceType1" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="choiceAI2" mnemonicParsing="false" onAction="#aiOnAction2" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType1" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets top="25.0" />
+                                 </GridPane.margin>
+                              </RadioButton>
+                              <ComboBox fx:id="comboDifficult2" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="gridPanePlayer3" minHeight="-Infinity" prefHeight="105.0" prefWidth="1090.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar3" styleClass="managePlayerButtons" text="&lt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <ImageView id="imgAvatar" fx:id="imgAvatar3" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
+                                       <image>
+                                          <Image url="@../../resources/avatar/3.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Button mnemonicParsing="false" onAction="#onActionNextAvatar3" styleClass="managePlayerButtons" text="&gt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label text="Spieler 3 :" GridPane.halignment="LEFT">
+                                 <GridPane.margin>
+                                    <Insets left="80.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txtName3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 3" styleClass="managePlayerTextfields" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </TextField>
+                              <RadioButton fx:id="choiceHuman3" mnemonicParsing="false" onAction="#humanOnAction3" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="25.0" />
+                                 </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="choiceType11" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="choiceAI3" mnemonicParsing="false" onAction="#aiOnAction3" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType11" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets top="25.0" />
+                                 </GridPane.margin>
+                              </RadioButton>
+                              <ComboBox fx:id="comboDifficult3" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="gridPanePlayer4" minHeight="-Infinity" prefHeight="105.0" prefWidth="1090.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar4" styleClass="managePlayerButtons" text="&lt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <ImageView id="imgAvatar" fx:id="imgAvatar4" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
+                                       <image>
+                                          <Image url="@../../resources/avatar/4.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Button mnemonicParsing="false" onAction="#onActionNextAvatar4" styleClass="managePlayerButtons" text="&gt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label text="Spieler 4:" GridPane.halignment="LEFT">
+                                 <GridPane.margin>
+                                    <Insets left="80.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txtName4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 4" styleClass="managePlayerTextfields" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </TextField>
+                              <RadioButton fx:id="choiceHuman4" mnemonicParsing="false" onAction="#humanOnAction4" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="25.0" />
+                                 </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="choiceType12" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="choiceAI4" mnemonicParsing="false" onAction="#aiOnAction4" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType12" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets top="25.0" />
+                                 </GridPane.margin>
+                              </RadioButton>
+                              <ComboBox fx:id="comboDifficult4" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="gridPanePlayer5" minHeight="-Infinity" prefHeight="105.0" prefWidth="1090.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar5" styleClass="managePlayerButtons" text="&lt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <ImageView id="imgAvatar" fx:id="imgAvatar5" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
+                                       <image>
+                                          <Image url="@../../resources/avatar/5.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Button mnemonicParsing="false" onAction="#onActionNextAvatar5" styleClass="managePlayerButtons" text="&gt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label text="Spieler 5 :" GridPane.halignment="LEFT">
+                                 <GridPane.margin>
+                                    <Insets left="80.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txtName5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 5" styleClass="managePlayerTextfields" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </TextField>
+                              <RadioButton fx:id="choiceHuman5" mnemonicParsing="false" onAction="#humanOnAction5" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="25.0" />
+                                 </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="choiceType13" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="choiceAI5" mnemonicParsing="false" onAction="#aiOnAction5" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType13" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets top="25.0" />
+                                 </GridPane.margin>
+                              </RadioButton>
+                              <ComboBox fx:id="comboDifficult5" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="gridPanePlayer6" minHeight="-Infinity" prefHeight="105.0" prefWidth="1090.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar6" styleClass="managePlayerButtons" text="&lt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <ImageView id="imgAvatar" fx:id="imgAvatar6" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
+                                       <image>
+                                          <Image url="@../../resources/avatar/6.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Button mnemonicParsing="false" onAction="#onActionNextAvatar6" styleClass="managePlayerButtons" text="&gt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label text="Spieler 6 :" GridPane.halignment="LEFT">
+                                 <GridPane.margin>
+                                    <Insets left="80.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txtName6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 6" styleClass="managePlayerTextfields" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </TextField>
+                              <RadioButton fx:id="choiceHuman6" mnemonicParsing="false" onAction="#humanOnAction6" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="25.0" />
+                                 </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="choiceType14" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="choiceAI6" mnemonicParsing="false" onAction="#aiOnAction6" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType14" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets top="25.0" />
+                                 </GridPane.margin>
+                              </RadioButton>
+                              <ComboBox fx:id="comboDifficult6" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="gridPanePlayer7" minHeight="-Infinity" prefHeight="105.0" prefWidth="1090.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar7" styleClass="managePlayerButtons" text="&lt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <ImageView id="imgAvatar" fx:id="imgAvatar7" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
+                                       <image>
+                                          <Image url="@../../resources/avatar/7.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Button mnemonicParsing="false" onAction="#onActionNextAvatar7" styleClass="managePlayerButtons" text="&gt;">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label text="Spieler 7 :" GridPane.halignment="LEFT">
+                                 <GridPane.margin>
+                                    <Insets left="80.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txtName7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 7" styleClass="managePlayerTextfields" GridPane.halignment="RIGHT">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </TextField>
+                              <RadioButton fx:id="choiceHuman7" mnemonicParsing="false" onAction="#humanOnAction7" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets bottom="25.0" />
+                                 </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="choiceType15" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="choiceAI7" mnemonicParsing="false" onAction="#aiOnAction7" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType15" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <padding>
+                                    <Insets left="25.0" />
+                                 </padding>
+                                 <GridPane.margin>
+                                    <Insets top="25.0" />
+                                 </GridPane.margin>
+                              </RadioButton>
+                              <ComboBox fx:id="comboDifficult7" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
+                           </children>
+                        </GridPane>
                      </children>
-                  </HBox>
-                  <Label text="Spieler 1 :" GridPane.halignment="LEFT">
-                     <GridPane.margin>
-                        <Insets left="80.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="txtName1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 1" styleClass="managePlayerTextfields" text="Brettspielzerstörer" GridPane.halignment="RIGHT">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <RadioButton fx:id="choiceHuman1" mnemonicParsing="false" onAction="#humanOnAction1" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="25.0" />
-                     </GridPane.margin>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="choiceType" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="choiceAI1" mnemonicParsing="false" onAction="#aiOnAction1" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets top="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <ComboBox fx:id="comboDifficult1" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
+                  </VBox>
                </children>
-            </GridPane>
-            <GridPane fx:id="gridPanePlayer2" prefHeight="105.0" prefWidth="1090.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar2" styleClass="managePlayerButtons" text="&lt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                        <ImageView id="imgAvatar" fx:id="imgAvatar2" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
-                           <image>
-                              <Image url="@../../resources/avatar/2.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </ImageView>
-                        <Button mnemonicParsing="false" onAction="#onActionNextAvatar2" styleClass="managePlayerButtons" text="&gt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                     </children>
-                  </HBox>
-                  <Label text="Spieler 2:" GridPane.halignment="LEFT">
-                     <GridPane.margin>
-                        <Insets left="80.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="txtName2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 2" styleClass="managePlayerTextfields" text="AlanTuring" GridPane.halignment="RIGHT">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <RadioButton fx:id="choiceHuman2" mnemonicParsing="false" onAction="#humanOnAction2" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="25.0" />
-                     </GridPane.margin>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="choiceType1" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="choiceAI2" mnemonicParsing="false" onAction="#aiOnAction2" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType1" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets top="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <ComboBox fx:id="comboDifficult2" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
-               </children>
-            </GridPane>
-            <GridPane fx:id="gridPanePlayer3" prefHeight="105.0" prefWidth="1090.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar3" styleClass="managePlayerButtons" text="&lt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                        <ImageView id="imgAvatar" fx:id="imgAvatar3" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
-                           <image>
-                              <Image url="@../../resources/avatar/3.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </ImageView>
-                        <Button mnemonicParsing="false" onAction="#onActionNextAvatar3" styleClass="managePlayerButtons" text="&gt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                     </children>
-                  </HBox>
-                  <Label text="Spieler 3 :" GridPane.halignment="LEFT">
-                     <GridPane.margin>
-                        <Insets left="80.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="txtName3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 3" styleClass="managePlayerTextfields" GridPane.halignment="RIGHT">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <RadioButton fx:id="choiceHuman3" mnemonicParsing="false" onAction="#humanOnAction3" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="25.0" />
-                     </GridPane.margin>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="choiceType11" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="choiceAI3" mnemonicParsing="false" onAction="#aiOnAction3" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType11" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets top="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <ComboBox fx:id="comboDifficult3" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
-               </children>
-            </GridPane>
-            <GridPane fx:id="gridPanePlayer4" prefHeight="105.0" prefWidth="1090.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar4" styleClass="managePlayerButtons" text="&lt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                        <ImageView id="imgAvatar" fx:id="imgAvatar4" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
-                           <image>
-                              <Image url="@../../resources/avatar/4.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </ImageView>
-                        <Button mnemonicParsing="false" onAction="#onActionNextAvatar4" styleClass="managePlayerButtons" text="&gt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                     </children>
-                  </HBox>
-                  <Label text="Spieler 4:" GridPane.halignment="LEFT">
-                     <GridPane.margin>
-                        <Insets left="80.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="txtName4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 4" styleClass="managePlayerTextfields" GridPane.halignment="RIGHT">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <RadioButton fx:id="choiceHuman4" mnemonicParsing="false" onAction="#humanOnAction4" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="25.0" />
-                     </GridPane.margin>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="choiceType12" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="choiceAI4" mnemonicParsing="false" onAction="#aiOnAction4" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType12" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets top="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <ComboBox fx:id="comboDifficult4" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
-               </children>
-            </GridPane>
-            <GridPane fx:id="gridPanePlayer5" prefHeight="105.0" prefWidth="1090.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar5" styleClass="managePlayerButtons" text="&lt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                        <ImageView id="imgAvatar" fx:id="imgAvatar5" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
-                           <image>
-                              <Image url="@../../resources/avatar/5.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </ImageView>
-                        <Button mnemonicParsing="false" onAction="#onActionNextAvatar5" styleClass="managePlayerButtons" text="&gt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                     </children>
-                  </HBox>
-                  <Label text="Spieler 5 :" GridPane.halignment="LEFT">
-                     <GridPane.margin>
-                        <Insets left="80.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="txtName5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 5" styleClass="managePlayerTextfields" GridPane.halignment="RIGHT">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <RadioButton fx:id="choiceHuman5" mnemonicParsing="false" onAction="#humanOnAction5" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="25.0" />
-                     </GridPane.margin>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="choiceType13" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="choiceAI5" mnemonicParsing="false" onAction="#aiOnAction5" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType13" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets top="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <ComboBox fx:id="comboDifficult5" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
-               </children>
-            </GridPane>
-            <GridPane fx:id="gridPanePlayer6" prefHeight="105.0" prefWidth="1090.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar6" styleClass="managePlayerButtons" text="&lt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                        <ImageView id="imgAvatar" fx:id="imgAvatar6" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
-                           <image>
-                              <Image url="@../../resources/avatar/6.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </ImageView>
-                        <Button mnemonicParsing="false" onAction="#onActionNextAvatar6" styleClass="managePlayerButtons" text="&gt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                     </children>
-                  </HBox>
-                  <Label text="Spieler 6 :" GridPane.halignment="LEFT">
-                     <GridPane.margin>
-                        <Insets left="80.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="txtName6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 6" styleClass="managePlayerTextfields" GridPane.halignment="RIGHT">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <RadioButton fx:id="choiceHuman6" mnemonicParsing="false" onAction="#humanOnAction6" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="25.0" />
-                     </GridPane.margin>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="choiceType14" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="choiceAI6" mnemonicParsing="false" onAction="#aiOnAction6" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType14" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets top="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <ComboBox fx:id="comboDifficult6" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
-               </children>
-            </GridPane>
-            <GridPane fx:id="gridPanePlayer7" prefHeight="105.0" prefWidth="1090.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="381.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="374.0" minWidth="10.0" prefWidth="328.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="134.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="209.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="1">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#onActionPreviousAvatar7" styleClass="managePlayerButtons" text="&lt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                        <ImageView id="imgAvatar" fx:id="imgAvatar7" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" styleClass="managePlayerImages">
-                           <image>
-                              <Image url="@../../resources/avatar/7.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </ImageView>
-                        <Button mnemonicParsing="false" onAction="#onActionNextAvatar7" styleClass="managePlayerButtons" text="&gt;">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin></Button>
-                     </children>
-                  </HBox>
-                  <Label text="Spieler 7 :" GridPane.halignment="LEFT">
-                     <GridPane.margin>
-                        <Insets left="80.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="txtName7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="250.0" promptText="#Spieler 7" styleClass="managePlayerTextfields" GridPane.halignment="RIGHT">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <RadioButton fx:id="choiceHuman7" mnemonicParsing="false" onAction="#humanOnAction7" selected="true" styleClass="managePlayerRadiobuttons" text="Mensch" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets bottom="25.0" />
-                     </GridPane.margin>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="choiceType15" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="choiceAI7" mnemonicParsing="false" onAction="#aiOnAction7" styleClass="managePlayerRadiobuttons" text="Computer" toggleGroup="$choiceType15" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                     <padding>
-                        <Insets left="25.0" />
-                     </padding>
-                     <GridPane.margin>
-                        <Insets top="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <ComboBox fx:id="comboDifficult7" disable="true" prefWidth="150.0" promptText="Schwierigkeit" styleClass="managePlayerCombobox" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
-               </children>
-            </GridPane>
-         </children>
-      </VBox>
-   </center>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </right>
 </BorderPane>
