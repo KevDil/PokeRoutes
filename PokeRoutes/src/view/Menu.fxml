@@ -15,7 +15,7 @@
                <VBox.margin>
                   <Insets top="140.0" />
                </VBox.margin></Button>
-            <Button mnemonicParsing="false" onAction="#onActionNewGame" prefWidth="220.0" text="Spiel laden" />
+            <Button mnemonicParsing="false" onAction="#onActionLoadGame" prefWidth="220.0" text="Spiel laden" />
             <Button mnemonicParsing="false" onAction="#onActionHighscore" prefWidth="220.0" text="Highscore">
                <VBox.margin>
                   <Insets />
