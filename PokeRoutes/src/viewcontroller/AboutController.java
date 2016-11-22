@@ -3,14 +3,15 @@ package viewcontroller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.image.ImageView;
 
 public class AboutController extends ViewController {
 
     @FXML
-    private Hyperlink hyperlink;
+    private ImageView qrcode;
 
     @FXML
-    void hyperlinkOnAction(ActionEvent event) {
+    void qrcodeOnAction(ActionEvent event) {
     	String url = "https://sopra.cs.tu-dortmund.de/wiki/sopra/16b/projekt2/start";
  
     	masterViewController.openLink(url);

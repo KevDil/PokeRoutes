@@ -33,7 +33,9 @@ public class ResourceController {
 			CARD_FRAME_PER_MS = "cardtype/%s/frames.txt",
 			CARD_FRAMES = "cardtype/%s/frames/out%05d.png",
 			
-			ICON = "menu/pokeball_icon.png";
+			ICON = "menu/pokeball_icon.png",
+	
+			QRCODE = "about/qrcode.jpg";
 	
 	private Image[] avatars;
 	private Image icon;
