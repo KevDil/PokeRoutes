@@ -54,7 +54,7 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
     		Player player = gameController.getActivePlayer();
     		currentCastleCard = (CastleCard)player.getLeftCard();
     		currentCastleCard.setRotation(currentCastleCard.getRotation().rotateRight());
-    		ViewContext<CardViewController> cardView = masterViewController.createCardView(handcards[0], false, true);
+    		ViewContext<CardViewController> cardView = masterViewController.createCardView(player.getLeftCard(), false, true);
 			cardView.getController().setOnCardAction(x -> handleHandCardAction(x, 0));
 //			paneHandCard1.getChildren().clear();
 //			paneHandCard1.getChildren().add(cardView.getPane());

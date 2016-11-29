@@ -77,21 +77,21 @@ public class Player  implements Serializable{
 	/**
 	 * @return the left card
 	 */
-	public Card[] getLeftCard() {
+	public Card getLeftCard() {
 		return cards[0];
 	}
 	
 	/**
 	 * @return the middle cards
 	 */
-	public Card[] getMiddleCard() {
+	public Card getMiddleCard() {
 		return cards[1];
 	}
 	
 	/**
 	 * @return the cards
 	 */
-	public Card[] getRightCard() {
+	public Card getRightCard() {
 		return cards[2];
 	}
 	
