@@ -1,5 +1,7 @@
 package viewcontroller;
 
+import com.sun.xml.internal.ws.handler.HandlerChainsModel;
+
 import controller.AUIMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import model.BonusCard;
@@ -21,32 +25,15 @@ import model.Rotation;
 import model.TurnStage;
 
 public class CurrentPlayerController extends ViewController implements AUIMain {
-	@FXML
-	private Pane paneHandCard1;
-
-	@FXML
-	private Pane paneHandCard2;
-
-	@FXML
-	private Pane paneHandCard3;
-	
-    @FXML
-    private ImageView imgViewBuildCard;
-
-	@FXML
-	private ImageView imgViewAvatar;
-
-	@FXML
-	private Label txtPlayerName;
-
-	@FXML
-	private Label txtPlayerPoints;
-
-	@FXML
-	private TabPane tabPaneCastles;
-	
-    @FXML
-    private HBox hboxBonusCards;
+	@FXML private Pane paneHandCard1;
+	@FXML private Pane paneHandCard2;
+	@FXML private Pane paneHandCard3;
+    @FXML private ImageView imgViewBuildCard;
+	@FXML private ImageView imgViewAvatar;
+	@FXML private Label txtPlayerName;
+	@FXML private Label txtPlayerPoints;
+	@FXML private TabPane tabPaneCastles;
+    @FXML private HBox hboxBonusCards;
     
     CastleCard currentCastleCard;
     Card tradeCard;
@@ -61,6 +48,31 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
     }
     
 
+    @FXML
+    void c1Click(MouseEvent event) {
+    	if(event.getButton().equals(MouseButton.PRIMARY)) {
+    		Player player = gameController.getActivePlayer();
+    		Card[] handcards = player.getCards();
+    		currentCastleCard = (CastleCard)handcards[0];
+    		currentCastleCard.setRotation(currentCastleCard.getRotation().rotateRight());
+    		ViewContext<CardViewController> cardView = masterViewController.createCardView(handcards[0], false, true);
+			cardView.getController().setOnCardAction(x -> handleHandCardAction(x, 0));
+//			paneHandCard1.getChildren().clear();
+//			paneHandCard1.getChildren().add(cardView.getPane());
+			
+			CardForm cardForm = currentCastleCard.getCardForm();
+			ImageView rotateImage = new ImageView();
+			rotateImage.setImage(masterViewController
+					.getResourceController()
+					.getWayCard(cardForm));
+			
+			rotateImage.setRotate(currentCastleCard.getRotation().toDegrees());
+			
+			paneHandCard1.getChildren().clear();
+			paneHandCard1.getChildren().add(rotateImage);
+    	}
+    }
+    
     @FXML
     void onActionCancelBuild(ActionEvent event) {
     	if(getTurnStage() == TurnStage.BUILD_ONLY) {
@@ -130,13 +142,11 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Karte tauschen");
 			alert.setHeaderText("Warnung");
-			alert.setContentText("Keine Karte zum tauschen ausgewÃ¤hlt!");
+			alert.setContentText("Keine Karte zum tauschen ausgewählt!");
 
 			alert.showAndWait();
 			return;
 		}
-		
-		
 	}
 	
 	private void handleCastleAddCard(Castle castle, AddCardEvent addCardEvent) {
@@ -188,9 +198,9 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
 		TurnStage stage = getTurnStage();
 		if(currentCastleCard != null || stage != TurnStage.ACTION) {
 			Alert alert = new Alert(AlertType.WARNING);
-    		alert.setTitle("Nicht mÃ¶glich");
+    		alert.setTitle("Nicht möglich");
     		alert.setHeaderText("Warnung");
-    		alert.setContentText("AusgewÃ¤hlte Aktion nicht mÃ¶glich!");
+    		alert.setContentText("Ausgewählte Aktion nicht möglich!");
 
     		alert.showAndWait();
 			return;
@@ -255,11 +265,11 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
 			tabPaneCastles.getTabs().add(tab);
 		}
 		
-		hboxBonusCards.getChildren().clear();
-		for(BonusCard bonusCard : player.getBonusCards()) {
-			hboxBonusCards.getChildren().add(
-					masterViewController.createCardView(bonusCard, true).getPane());
-		}
+//		hboxBonusCards.getChildren().clear();
+//		for(BonusCard bonusCard : player.getBonusCards()) {
+//			hboxBonusCards.getChildren().add(
+//					masterViewController.createCardView(bonusCard, true).getPane());
+//		}
 
 	}
 	
