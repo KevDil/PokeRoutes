@@ -24,7 +24,7 @@ public class Main extends Application {
 					new MasterViewController(primaryStage, gameController, baseUrl,
 							getHostServices());
 			
-			masterViewController.createDummyGame();
+	//		masterViewController.createDummyGame();
 	//		masterViewController.loadMainscreen();
 
 			masterViewController.loadMenu();
