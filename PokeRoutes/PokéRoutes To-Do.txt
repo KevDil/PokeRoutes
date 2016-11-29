@@ -2,12 +2,12 @@ PokéRoutes To-Do:
 
 111
 Menü
-- Spiel laden hinzufügen
-- Hyperlink im About fixieren
-- QR-Code?
+- Spiel laden hinzufügen FERTIG
+- Hyperlink im About fixieren FERTIG
+- QR-Code? FERTIG
 
 ManagePlayer
-- Fenster fixen
+- Fenster fixen FERTIG
 - Kurzes/Langes Spiel
 - AI einfügen
 - Tutorial zur GUI?
