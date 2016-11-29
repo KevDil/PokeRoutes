@@ -8,9 +8,7 @@ public class CastleCard extends Card {
 	private static final long serialVersionUID = -514244843061990934L;
 
 	private CardType type;
-
 	private CardForm cardForm;
-
 	private Rotation rotation;
 
 	/**

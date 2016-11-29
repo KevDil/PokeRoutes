@@ -52,8 +52,7 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
     void c1Click(MouseEvent event) {
     	if(event.getButton().equals(MouseButton.PRIMARY)) {
     		Player player = gameController.getActivePlayer();
-    		Card[] handcards = player.getCards();
-    		currentCastleCard = (CastleCard)handcards[0];
+    		currentCastleCard = (CastleCard)player.getLeftCard();
     		currentCastleCard.setRotation(currentCastleCard.getRotation().rotateRight());
     		ViewContext<CardViewController> cardView = masterViewController.createCardView(handcards[0], false, true);
 			cardView.getController().setOnCardAction(x -> handleHandCardAction(x, 0));
@@ -142,7 +141,7 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle("Karte tauschen");
 			alert.setHeaderText("Warnung");
-			alert.setContentText("Keine Karte zum tauschen ausgewählt!");
+			alert.setContentText("Keine Karte zum tauschen ausgewï¿½hlt!");
 
 			alert.showAndWait();
 			return;
@@ -198,9 +197,9 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
 		TurnStage stage = getTurnStage();
 		if(currentCastleCard != null || stage != TurnStage.ACTION) {
 			Alert alert = new Alert(AlertType.WARNING);
-    		alert.setTitle("Nicht möglich");
+    		alert.setTitle("Nicht mï¿½glich");
     		alert.setHeaderText("Warnung");
-    		alert.setContentText("Ausgewählte Aktion nicht möglich!");
+    		alert.setContentText("Ausgewï¿½hlte Aktion nicht mï¿½glich!");
 
     		alert.showAndWait();
 			return;
