@@ -21,8 +21,8 @@ import viewcontroller.CardActionEvent.ActionCode;
 
 public class CardViewController extends ViewController {
 
-	private Card card;
-	private BonusCard bonusCard = null;
+	private Card card = null;
+	private BonusCard bonusCard;
 	private boolean showAlways;
 	private boolean hasCtxMenu;
 	private ContextMenu contextMenu;
@@ -36,12 +36,8 @@ public class CardViewController extends ViewController {
 	
 	@FXML
 	void onMouseClick(MouseEvent event) {
-		System.out.println(event.toString());
 		if(event.getButton().equals(MouseButton.PRIMARY)) {
-			
-			
-			if(card.isCastleCard()&&bonusCard==null) {
-				System.out.println(card.isCastleCard());
+			if(card != null && card.isCastleCard()) {
 				CastleCard castleCard = (CastleCard)card;
 				Integer degrees = castleCard.getRotation().toDegrees();
 				rotateRight(degrees);
@@ -50,13 +46,11 @@ public class CardViewController extends ViewController {
 	}
 	
 	private void rotateRight(Integer degrees) {
-		System.out.println("Ausgeführt");
 		if((degrees + 90) == 360) {
 			imgViewBackground.setRotate(0);
 		} else {
 			imgViewBackground.setRotate(degrees + 90);
 		}
-		System.out.println(degrees);
 	}
 	
 	@FXML 
