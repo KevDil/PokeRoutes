@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import model.BonusCard;
 import model.Card;
 import model.CastleCard;
@@ -21,7 +22,7 @@ import viewcontroller.CardActionEvent.ActionCode;
 public class CardViewController extends ViewController {
 
 	private Card card;
-	private BonusCard bonusCard;
+	private BonusCard bonusCard = null;
 	private boolean showAlways;
 	private boolean hasCtxMenu;
 	private ContextMenu contextMenu;
@@ -29,15 +30,33 @@ public class CardViewController extends ViewController {
 	private MenuItem menuItemBuild;
 	private EventHandler<CardActionEvent> onCardAction;
 
+	@FXML private AnchorPane viewCardPane;
 	@FXML private ImageView imgViewBackground;
 	@FXML private ImageView imgViewAnimation;
 	
 	@FXML
 	void onMouseClick(MouseEvent event) {
+		System.out.println(event.toString());
 		if(event.getButton().equals(MouseButton.PRIMARY)) {
-			if (!showAlways)
-				showCard();
+			
+			
+			if(card.isCastleCard()&&bonusCard==null) {
+				System.out.println(card.isCastleCard());
+				CastleCard castleCard = (CastleCard)card;
+				Integer degrees = castleCard.getRotation().toDegrees();
+				rotateRight(degrees);
+			}
 		}
+	}
+	
+	private void rotateRight(Integer degrees) {
+		System.out.println("Ausgeführt");
+		if((degrees + 90) == 360) {
+			imgViewBackground.setRotate(0);
+		} else {
+			imgViewBackground.setRotate(degrees + 90);
+		}
+		System.out.println(degrees);
 	}
 	
 	@FXML 
@@ -160,13 +179,4 @@ public class CardViewController extends ViewController {
 	public void setOnCardAction(EventHandler<CardActionEvent> onCardAction) {
 		this.onCardAction = onCardAction;
 	}
-	
-	public void rotateBackgroundRight(Integer degrees) {
-		imgViewBackground.setRotate(degrees);
-	}
-	
-	public void update() {
-		showCard();
-	}
-
 }

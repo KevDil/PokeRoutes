@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#onContextMenuRequest" onMouseClicked="#onMouseClick" onMouseEntered="#onMouseEnter" onMouseExited="#OnMouseExit" prefHeight="128.0" prefWidth="128.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewcontroller.CardViewController">
+<AnchorPane fx:id="viewCardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#onContextMenuRequest" onMouseClicked="#onMouseClick" onMouseEntered="#onMouseEnter" onMouseExited="#OnMouseExit" prefHeight="128.0" prefWidth="128.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewcontroller.CardViewController">
    <children>
       <StackPane layoutX="122.0" layoutY="28.0" prefHeight="128.0" prefWidth="128.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
