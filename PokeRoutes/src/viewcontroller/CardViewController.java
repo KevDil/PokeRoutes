@@ -8,6 +8,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import model.BonusCard;
 import model.Card;
@@ -28,20 +29,21 @@ public class CardViewController extends ViewController {
 	private MenuItem menuItemBuild;
 	private EventHandler<CardActionEvent> onCardAction;
 
+	@FXML private ImageView imgViewBackground;
+	@FXML private ImageView imgViewAnimation;
+	
 	@FXML
-	private ImageView imgViewBackground;
-
-	@FXML
-	private ImageView imgViewAnimation;
-
-	@FXML
+	void onMouseClick(MouseEvent event) {
+		if(event.getButton().equals(MouseButton.PRIMARY)) {
+			if (!showAlways)
+				showCard();
+		}
+	}
+	
+	@FXML 
 	void OnMouseExit(MouseEvent event) {
 		if(!showAlways)
 			showCardBackground();
-	}
-
-	@FXML
-	void onMouseClick(MouseEvent event) {
 	}
 	
 	@FXML
@@ -56,16 +58,11 @@ public class CardViewController extends ViewController {
 			showCard();
 	}
 	
-	@FXML
-    private void initialize() {
-    }
-	
 	private void fireActionEvent(ActionCode actionCode) {
 		if(onCardAction != null) {
 			CardActionEvent cardActionEvent =
 					new CardActionEvent(this.card, actionCode);
-			onCardAction.handle(cardActionEvent);
-			
+			onCardAction.handle(cardActionEvent);		
 		}
 	}
 	
@@ -108,7 +105,8 @@ public class CardViewController extends ViewController {
 		ResourceController resourceController = masterViewController.getResourceController();
 
 		Image background = null, anim = null;
-
+		Integer degrees = 0;
+		
 		if (card != null) {
 			if (card.isBigWave()) {
 				background = resourceController.getBigWave();
@@ -117,6 +115,7 @@ public class CardViewController extends ViewController {
 				background = resourceController.getCombatCard(combatCard.getType());
 			} else { // Castle Card
 				CastleCard castleCard = (CastleCard) card;
+				degrees = castleCard.getRotation().toDegrees();
 				background = resourceController.getWayCard(castleCard.getCardForm());
 
 				FrameSet frameSet = resourceController.getCardTypeFrame(castleCard.getType());
@@ -139,11 +138,13 @@ public class CardViewController extends ViewController {
 
 		imgViewAnimation.setImage(anim);
 		imgViewBackground.setImage(background);
+		imgViewBackground.setRotate(degrees);
 	}
 
 	private void showCardBackground() {
 		imgViewAnimation.setImage(null);
 		imgViewBackground.setImage(masterViewController.getResourceController().getBack());
+		imgViewBackground.setRotate(0);
 	}
 
 	/**
@@ -158,6 +159,14 @@ public class CardViewController extends ViewController {
 	 */
 	public void setOnCardAction(EventHandler<CardActionEvent> onCardAction) {
 		this.onCardAction = onCardAction;
+	}
+	
+	public void rotateBackgroundRight(Integer degrees) {
+		imgViewBackground.setRotate(degrees);
+	}
+	
+	public void update() {
+		showCard();
 	}
 
 }

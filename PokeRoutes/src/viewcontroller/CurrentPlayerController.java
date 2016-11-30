@@ -1,7 +1,5 @@
 package viewcontroller;
 
-import com.sun.xml.internal.ws.handler.HandlerChainsModel;
-
 import controller.AUIMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +13,6 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import model.BonusCard;
 import model.Card;
 import model.CardForm;
 import model.Castle;
@@ -49,26 +46,38 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
     
 
     @FXML
-    void c1Click(MouseEvent event) {
+    void leftcardClick(MouseEvent event) {
     	if(event.getButton().equals(MouseButton.PRIMARY)) {
     		Player player = gameController.getActivePlayer();
-    		currentCastleCard = (CastleCard)player.getLeftCard();
-    		currentCastleCard.setRotation(currentCastleCard.getRotation().rotateRight());
-    		ViewContext<CardViewController> cardView = masterViewController.createCardView(player.getLeftCard(), false, true);
-			cardView.getController().setOnCardAction(x -> handleHandCardAction(x, 0));
-//			paneHandCard1.getChildren().clear();
-//			paneHandCard1.getChildren().add(cardView.getPane());
-			
-			CardForm cardForm = currentCastleCard.getCardForm();
-			ImageView rotateImage = new ImageView();
-			rotateImage.setImage(masterViewController
-					.getResourceController()
-					.getWayCard(cardForm));
-			
-			rotateImage.setRotate(currentCastleCard.getRotation().toDegrees());
-			
-			paneHandCard1.getChildren().clear();
-			paneHandCard1.getChildren().add(rotateImage);
+    		if(player.getLeftCard().isCastleCard()) {
+    			currentCastleCard = (CastleCard)player.getLeftCard();
+    			currentCastleCard.setRotation(currentCastleCard.getRotation().rotateRight());
+    			player.setHandCard(0, currentCastleCard);
+    		}
+    	}
+    }
+    
+    @FXML
+    void midcardClick(MouseEvent event) {
+    	if(event.getButton().equals(MouseButton.PRIMARY)) {
+    		Player player = gameController.getActivePlayer();
+    		if(player.getMiddleCard().isCastleCard()) {
+    			currentCastleCard = (CastleCard)player.getMiddleCard();
+    			currentCastleCard.setRotation(currentCastleCard.getRotation().rotateRight());
+    			player.setHandCard(1, currentCastleCard);
+    		}
+    	}
+    }
+    
+    @FXML
+    void rightcardClick(MouseEvent event) {
+    	if(event.getButton().equals(MouseButton.PRIMARY)) {
+    		Player player = gameController.getActivePlayer();
+    		if(player.getRightCard().isCastleCard()) {
+    			currentCastleCard = (CastleCard)player.getRightCard();
+    			currentCastleCard.setRotation(currentCastleCard.getRotation().rotateRight());
+    			player.setHandCard(2, currentCastleCard);
+    		}
     	}
     }
     
@@ -84,7 +93,6 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
     	}
     	
     	resetBuildCard();
-
     }
 
     @FXML
@@ -197,9 +205,9 @@ public class CurrentPlayerController extends ViewController implements AUIMain {
 		TurnStage stage = getTurnStage();
 		if(currentCastleCard != null || stage != TurnStage.ACTION) {
 			Alert alert = new Alert(AlertType.WARNING);
-    		alert.setTitle("Nicht m�glich");
+    		alert.setTitle("Nicht moeglich");
     		alert.setHeaderText("Warnung");
-    		alert.setContentText("Ausgew�hlte Aktion nicht m�glich!");
+    		alert.setContentText("Ausgewaehlte Aktion nicht moeglich!");
 
     		alert.showAndWait();
 			return;

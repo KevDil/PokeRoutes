@@ -107,9 +107,9 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                      <children>
-                        <Pane fx:id="paneHandCard1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#c1Click" prefHeight="128.0" prefWidth="128.0" styleClass="deckImages" />
-                        <Pane fx:id="paneHandCard2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="128.0" prefWidth="128.0" styleClass="deckImages" />
-                        <Pane fx:id="paneHandCard3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="128.0" prefWidth="128.0" styleClass="deckImages" />
+                        <Pane fx:id="paneHandCard1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#leftcardClick" prefHeight="128.0" prefWidth="128.0" styleClass="deckImages" />
+                        <Pane fx:id="paneHandCard2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#midcardClick" prefHeight="128.0" prefWidth="128.0" styleClass="deckImages" />
+                        <Pane fx:id="paneHandCard3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#rightcardClick" prefHeight="128.0" prefWidth="128.0" styleClass="deckImages" />
                      </children>
                   </HBox>
                </children>

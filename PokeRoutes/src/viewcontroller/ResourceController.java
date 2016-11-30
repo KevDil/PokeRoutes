@@ -15,7 +15,9 @@ import javafx.scene.image.Image;
 import model.CardForm;
 import model.CardType;
 import model.CastleForm;
+
 public class ResourceController {
+	
 	private static final String AVATAR_PATH = "avatar/%d.png",
 			WAY_CROSS_PATH = "way/4-cross.png",
 			WAY_END_PATH = "way/end.png",

@@ -21,87 +21,47 @@ import model.Player;
 
 public class MainscreenController extends ViewController implements AUIMain {
 
-	@FXML
-	private DeckController includeDeckController;
-	@FXML
-	private CurrentPlayerController includeCurrentPlayerController;
-	@FXML
-	private InactivePlayersController includeInactivePlayer1Controller;
-	@FXML
-	private InactivePlayersController includeInactivePlayer2Controller;
-	@FXML
-	private InactivePlayersController includeInactivePlayer3Controller;
-	@FXML
-	private InactivePlayersController includeInactivePlayer4Controller;
-	@FXML
-	private InactivePlayersController includeInactivePlayer5Controller;
-	@FXML
-	private InactivePlayersController includeInactivePlayer6Controller;
-	@FXML
-	private InactivePlayersController includeInactivePlayer7Controller;
+	@FXML private DeckController includeDeckController;
+	@FXML private CurrentPlayerController includeCurrentPlayerController;
+	@FXML private InactivePlayersController includeInactivePlayer1Controller;
+	@FXML private InactivePlayersController includeInactivePlayer2Controller;
+	@FXML private InactivePlayersController includeInactivePlayer3Controller;
+	@FXML private InactivePlayersController includeInactivePlayer4Controller;
+	@FXML private InactivePlayersController includeInactivePlayer5Controller;
+	@FXML private InactivePlayersController includeInactivePlayer6Controller;
+	@FXML private InactivePlayersController includeInactivePlayer7Controller;
 
-	@FXML
-	private Parent includeDeck;
-	@FXML
-	private Parent includeCurrent;
-	@FXML
-	private Parent includeInactivePlayer1;
-	@FXML
-	private Parent includeInactivePlayer2;
-	@FXML
-	private Parent includeInactivePlayer3;
-	@FXML
-	private Parent includeInactivePlayer4;
-	@FXML
-	private Parent includeInactivePlayer5;
-	@FXML
-	private Parent includeInactivePlayer6;
-	@FXML
-	private Parent includeInactivePlayer7;
+	@FXML private Parent includeDeck;
+	@FXML private Parent includeCurrent;
+	@FXML private Parent includeInactivePlayer1;
+	@FXML private Parent includeInactivePlayer2;
+	@FXML private Parent includeInactivePlayer3;
+	@FXML private Parent includeInactivePlayer4;
+	@FXML private Parent includeInactivePlayer5;
+	@FXML private Parent includeInactivePlayer6;
+	@FXML private Parent includeInactivePlayer7;
 
-	@FXML
-	private MenuBar menuBar;
-	@FXML
-	private Menu menuGame;
-	@FXML
-	private MenuItem gameLoad;
-	@FXML
-	private MenuItem gameSave;
-	@FXML
-	private MenuItem gameMenu;
-	@FXML
-	private MenuItem gameEnd;
-	@FXML
-	private Menu menuExtras;
-	@FXML
-	private MenuItem extraScreenshot;
-	@FXML
-	private Menu menuHelp;
-	@FXML
-	private Accordion accInactivePlayers;
-	@FXML
-	private MenuItem helpBack;
-	@FXML
-	private MenuItem helpShowTip;
-	@FXML
-	private MenuItem helpShowInstructions;
-	@FXML
-	private TitledPane titledPanePlayer1;
-	@FXML
-	private TitledPane titledPanePlayer2;
-	@FXML
-	private TitledPane titledPanePlayer3;
-	@FXML
-	private TitledPane titledPanePlayer4;
-	@FXML
-	private TitledPane titledPanePlayer5;
-	@FXML
-	private TitledPane titledPanePlayer6;
-	@FXML
-	private TitledPane titledPanePlayer7;
-	@FXML
-	private BorderPane main;
-
+	@FXML private MenuBar menuBar;
+	@FXML private Menu menuGame;
+	@FXML private MenuItem gameLoad;
+	@FXML private MenuItem gameSave;
+	@FXML private MenuItem gameMenu;
+	@FXML private MenuItem gameEnd;
+	@FXML private Menu menuExtras;
+	@FXML private MenuItem extraScreenshot;
+	@FXML private Menu menuHelp;
+	@FXML private Accordion accInactivePlayers;
+	@FXML private MenuItem helpBack;
+	@FXML private MenuItem helpShowTip;
+	@FXML private MenuItem helpShowInstructions;
+	@FXML private TitledPane titledPanePlayer1;
+	@FXML private TitledPane titledPanePlayer2;
+	@FXML private TitledPane titledPanePlayer3;
+	@FXML private TitledPane titledPanePlayer4;
+	@FXML private TitledPane titledPanePlayer5;
+	@FXML private TitledPane titledPanePlayer6;
+	@FXML private TitledPane titledPanePlayer7;
+	@FXML private BorderPane main;
 	
 	@FXML
 	void loadOnAction(ActionEvent event) {

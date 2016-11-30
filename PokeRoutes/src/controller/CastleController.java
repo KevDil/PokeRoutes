@@ -41,7 +41,7 @@ public class CastleController {
 	public boolean canRemove(PlayedCardHolder card) {
 		if (card.getCastleCards().size() == 1) {
 			Castle castle = card.getCastle();
-			CastleCard castleCard = card.getTopCard();
+//			CastleCard castleCard = card.getTopCard();
 			Position pos = card.getPosition();
 			
 			castle.removePlayedCardHolder(pos);

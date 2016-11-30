@@ -18,117 +18,65 @@ import model.PlayerData;
 
 public class ManagePlayerController extends ViewController {
 
-	@FXML
-	private Button addPlayer;
-	@FXML
-	private Button deletePlayer;
-	@FXML
-	private Button resetPlayers;
+	@FXML private Button addPlayer;
+	@FXML private Button deletePlayer;
+	@FXML private Button resetPlayers;
 
-	@FXML
-	private GridPane gridPanePlayer1;
-	@FXML
-	private ImageView imgAvatar1;
-	@FXML
-	private TextField txtName1;
-	@FXML
-	private RadioButton choiceHuman1;
-	@FXML
-	private ToggleGroup choiceType1;
-	@FXML
-	private RadioButton choiceAI1;
-	@FXML
-	private ComboBox<String> comboDifficult1;
+	@FXML private GridPane gridPanePlayer1;
+	@FXML private ImageView imgAvatar1;
+	@FXML private TextField txtName1;
+	@FXML private RadioButton choiceHuman1;
+	@FXML private ToggleGroup choiceType1;
+	@FXML private RadioButton choiceAI1;
+	@FXML private ComboBox<String> comboDifficult1;
 
-	@FXML
-	private GridPane gridPanePlayer2;
-	@FXML
-	private ImageView imgAvatar2;
-	@FXML
-	private TextField txtName2;
-	@FXML
-	private RadioButton choiceHuman2;
-	@FXML
-	private ToggleGroup choiceType2;
-	@FXML
-	private RadioButton choiceAI2;
-	@FXML
-	private ComboBox<String> comboDifficult2;
+	@FXML private GridPane gridPanePlayer2;
+	@FXML private ImageView imgAvatar2;
+	@FXML private TextField txtName2;
+	@FXML private RadioButton choiceHuman2;
+	@FXML private ToggleGroup choiceType2;
+	@FXML private RadioButton choiceAI2;
+	@FXML private ComboBox<String> comboDifficult2;
 
-	@FXML
-	private GridPane gridPanePlayer3;
-	@FXML
-	private ImageView imgAvatar3;
-	@FXML
-	private TextField txtName3;
-	@FXML
-	private RadioButton choiceHuman3;
-	@FXML
-	private ToggleGroup choiceType3;
-	@FXML
-	private RadioButton choiceAI3;
-	@FXML
-	private ComboBox<String> comboDifficult3;
+	@FXML private GridPane gridPanePlayer3;
+	@FXML private ImageView imgAvatar3;
+	@FXML private TextField txtName3;
+	@FXML private RadioButton choiceHuman3;
+	@FXML private ToggleGroup choiceType3;
+	@FXML private RadioButton choiceAI3;
+	@FXML private ComboBox<String> comboDifficult3;
 
-	@FXML
-	private GridPane gridPanePlayer4;
-	@FXML
-	private ImageView imgAvatar4;
-	@FXML
-	private TextField txtName4;
-	@FXML
-	private RadioButton choiceHuman4;
-	@FXML
-	private ToggleGroup choiceType4;
-	@FXML
-	private RadioButton choiceAI4;
-	@FXML
-	private ComboBox<String> comboDifficult4;
+	@FXML private GridPane gridPanePlayer4;
+	@FXML private ImageView imgAvatar4;
+	@FXML private TextField txtName4;
+	@FXML private RadioButton choiceHuman4;
+	@FXML private ToggleGroup choiceType4;
+	@FXML private RadioButton choiceAI4;
+	@FXML private ComboBox<String> comboDifficult4;
 
-	@FXML
-	private GridPane gridPanePlayer5;
-	@FXML
-	private ImageView imgAvatar5;
-	@FXML
-	private TextField txtName5;
-	@FXML
-	private RadioButton choiceHuman5;
-	@FXML
-	private ToggleGroup choiceType5;
-	@FXML
-	private RadioButton choiceAI5;
-	@FXML
-	private ComboBox<String> comboDifficult5;
+	@FXML private GridPane gridPanePlayer5;
+	@FXML private ImageView imgAvatar5;
+	@FXML private TextField txtName5;
+	@FXML private RadioButton choiceHuman5;
+	@FXML private ToggleGroup choiceType5;
+	@FXML private RadioButton choiceAI5;
+	@FXML private ComboBox<String> comboDifficult5;
 
-	@FXML
-	private GridPane gridPanePlayer6;
-	@FXML
-	private ImageView imgAvatar6;
-	@FXML
-	private TextField txtName6;
-	@FXML
-	private RadioButton choiceHuman6;
-	@FXML
-	private ToggleGroup choiceType6;
-	@FXML
-	private RadioButton choiceAI6;
-	@FXML
-	private ComboBox<String> comboDifficult6;
+	@FXML private GridPane gridPanePlayer6;
+	@FXML private ImageView imgAvatar6;
+	@FXML private TextField txtName6;
+	@FXML private RadioButton choiceHuman6;
+	@FXML private ToggleGroup choiceType6;
+	@FXML private RadioButton choiceAI6;
+	@FXML private ComboBox<String> comboDifficult6;
 
-	@FXML
-	private GridPane gridPanePlayer7;
-	@FXML
-	private ImageView imgAvatar7;
-	@FXML
-	private TextField txtName7;
-	@FXML
-	private RadioButton choiceHuman7;
-	@FXML
-	private ToggleGroup choiceType7;
-	@FXML
-	private RadioButton choiceAI7;
-	@FXML
-	private ComboBox<String> comboDifficult7;
+	@FXML private GridPane gridPanePlayer7;
+	@FXML private ImageView imgAvatar7;
+	@FXML private TextField txtName7;
+	@FXML private RadioButton choiceHuman7;
+	@FXML private ToggleGroup choiceType7;
+	@FXML private RadioButton choiceAI7;
+	@FXML private ComboBox<String> comboDifficult7;
 
 	private int countPlayer = 2;
 	private int[] imageIndex = {0, 1, 2, 3, 4, 5, 6};
